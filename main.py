@@ -15,7 +15,7 @@ link = ('https://www.linkedin.com')
     df = pandas.read_csv('job_CS.csv', usecols=[3], header=None).dropna()
     csv_list = df.values.tolist()
     
-
+    company_list = []
     for company_name in job_list:
         if any(company_name in el for el in csv_list):
             company_list.append(' ' + company_name)
