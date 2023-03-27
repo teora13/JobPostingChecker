@@ -10,7 +10,6 @@ link = ('https://www.linkedin.com')
     result = soup.find_all("a", {"class": "hidden-nested-link"})
     for i in result:
         job_list.append(i.text.strip())
-    print(job_list)
     
     df = pandas.read_csv('job_CS.csv', usecols=[3], header=None).dropna()
     csv_list = df.values.tolist()
