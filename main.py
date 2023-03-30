@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-
+import pandas
+import eel
 
 link = ('https://www.linkedin.com')
     html_text = requests.get(link).text
