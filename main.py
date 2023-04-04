@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 import pandas
 import eel
 
+eel.init('web')
+@eel.expose
+
 link = ('https://www.linkedin.com')
     html_text = requests.get(link).text
     soup = BeautifulSoup(html_text, 'html.parser')
