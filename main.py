@@ -24,4 +24,9 @@ def JPC():
        if any(company_name in el for el in csv_list):
            company_list.append(' ' + company_name)
     return company_list
-JPC()             
+JPC()
+
+try:
+    eel.start('index.html', mode='chrome', host='localhost')
+except (SystemExit, MemoryError, KeyboardInterrupt):
+    pass
