@@ -7,6 +7,12 @@
 <body>
   <script type="text/javascript" src="/eel.js"></script>
   <output id="text" value="Processing. Please wait..." style="width: 700px;">
-    
+  <script>
+    async function run() {
+    let n = await eel.JPC()();
+    document.getElementById('text').value = n;
+    }
+  run();
+  </script>
 </body>
 </html>
