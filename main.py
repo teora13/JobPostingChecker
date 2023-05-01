@@ -11,6 +11,7 @@ def JPC():
     html_text = requests.get(link).text
     soup = BeautifulSoup(html_text, 'html.parser')
 
+# collecting data from the page and creating a new list
     job_list = []
     result = soup.find_all("a", {"class": "hidden-nested-link"})
     for i in result:
