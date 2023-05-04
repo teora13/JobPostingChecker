@@ -11,12 +11,12 @@ def JPC():
     html_text = requests.get(link).text
     soup = BeautifulSoup(html_text, 'html.parser')
 
-# collecting data from the page and creating a new list
+# collecting data from the page by findindg a class and creating a new list
     job_list = []
     result = soup.find_all("a", {"class": "hidden-nested-link"})
     for i in result:
         job_list.append(i.text.strip())
-
+# 
     df = pandas.read_csv('job_CS.csv', usecols=[3], header=None).dropna()
     csv_list = df.values.tolist()
 
