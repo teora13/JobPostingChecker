@@ -20,7 +20,7 @@ def JPC():
     df = pandas.read_csv('job_CS.csv', usecols=[3], header=None).dropna()
     csv_list = df.values.tolist()
 
-# finds the same companies on the page and in the csv file
+# finds the same companies on the page and compares them in the csv file
     company_list = []
     for company_name in job_list:
        if any(company_name in el for el in csv_list):
