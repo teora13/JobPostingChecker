@@ -17,10 +17,11 @@ def JPC():
     for i in result:
         job_list.append(i.text.strip())
 
-    df = pandas.read_csv('job_CS.csv', usecols=[3], header=None).dropna()
+# reads a csv file with a list of already applied positions and removes the rows that contains NULL values
+    df = pandas.read_csv('jobs.csv', usecols=[3], header=None).dropna()
     csv_list = df.values.tolist()
 
-# finds the same companies on the page and compares them in the csv file
+# finds the same companies on the page and compares them from the csv file
     company_list = []
     for company_name in job_list:
        if any(company_name in el for el in csv_list):
