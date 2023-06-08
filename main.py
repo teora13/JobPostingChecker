@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pandas
 import eel
 
+# starts a webserver on the default settings and opens a browser
 eel.init('web')
 @eel.expose
 
