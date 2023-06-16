@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas
 import eel
 
-# starts a webserver on the default settings and opens a browser
+# starts a webserver on the default settings 
 eel.init('web')
 @eel.expose
 
@@ -22,7 +22,7 @@ def JPC():
     df = pandas.read_csv('jobs.csv', usecols=[3], header=None).dropna()
     csv_list = df.values.tolist()
 
-# finds the same companies on the page and compares them from the csv file
+# compares found companies with csv file
     company_list = []
     for company_name in job_list:
        if any(company_name in el for el in csv_list):
@@ -30,6 +30,7 @@ def JPC():
     return company_list
 JPC()
 
+# opens a browser
 try:
     eel.start('index.html', mode='chrome', host='localhost')
 except (SystemExit, MemoryError, KeyboardInterrupt):
